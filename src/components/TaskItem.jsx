@@ -11,7 +11,18 @@ function TaskItem({ task, deleteTask, toggleTask, enterEditMode }) {
   const handleCheckboxChange = (e) => {
     setIsChecked(!isChecked);
     toggleTask(task.id);
+    console.log(e);
   };
+
+  const Date = (task) => {
+    const hour = new Date().getHours();
+    const minutes = new Date().getMinutes();
+    const time = `${hour < 10 ? `0${hour}` : hour} ${":"} ${
+      minutes < 10 ? `0${minutes}` : minutes
+    }`;
+    console.log();
+  };
+
   return (
     <li className={styles.task}>
       <div className={styles["task-group"]}>
@@ -31,6 +42,7 @@ function TaskItem({ task, deleteTask, toggleTask, enterEditMode }) {
         </label>
       </div>
       <div className={styles["task-group"]}>
+        <span className="taskDate">{}</span>
         <button
           className="btn"
           aria-label={`Update${task.name} Task`}

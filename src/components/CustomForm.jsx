@@ -4,7 +4,6 @@ import { PlusCircleIcon } from "@heroicons/react/24/solid";
 
 function CustomForm({ addTask }) {
   const [task, setTask] = useState("");
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     addTask({

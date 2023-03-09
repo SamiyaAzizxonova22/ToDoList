@@ -7,20 +7,21 @@ import CustomForm from "./components/CustomForm";
 import EditForm from "./components/EditForm";
 import TaskList from "./components/TaskList";
 import Filter from "./components/filter/Filter";
-
 function App() {
   const [tasks, setTasks] = useLocalStorage("react-todo.tasks", []);
   const [previousFocusEl, setPreviousFocusEl] = useState(false);
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
 
-  // add
   const addTask = (task) => {
     setTasks((prevState) => [...prevState, task]);
   };
   // delete
   const deleteTask = (id) => {
     setTasks((prevState) => prevState.filter((t) => t.id !== id));
+  };
+  const addTime = (time) => {
+    setTasks((prevState) => [...prevState, time]);
   };
   // toggle
   const toggleTask = (id) => {
@@ -36,13 +37,11 @@ function App() {
     closeEditMode();
     // TODO:close the edit mode
   };
-
   const closeEditMode = () => {
     previousFocusEl.focus();
     setIsEditing(false);
     // TODO: prvious state focus
   };
-
   const enterEditMode = (task) => {
     setEditedTask(task);
     setIsEditing(true);
@@ -71,7 +70,7 @@ function App() {
           enterEditMode={enterEditMode}
         />
       )}
-      <Filter />
+      {/* <Filter /> */}
     </div>
   );
 }

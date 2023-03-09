@@ -106,3 +106,9 @@
   font-size: var(--_size);
   text-align: center;
 }
+
+.taskDate {
+  display: block;
+  font-size: 10px;
+  color: red;
+}

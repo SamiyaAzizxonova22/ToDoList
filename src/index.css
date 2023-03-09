@@ -281,3 +281,19 @@ hr {
     gap: 50px;
   }
 }
+
+@media screen and (max-width: 650px) {
+  body {
+    background: rgb(153, 11, 16);
+    background: linear-gradient(
+      338deg,
+      rgba(153, 11, 16, 1) 0%,
+      rgba(121, 105, 9, 1) 33%,
+      rgba(177, 5, 118, 1) 48%,
+      rgba(54, 219, 178, 1) 61%,
+      rgba(254, 255, 0, 1) 76%,
+      rgba(255, 132, 0, 1) 86%,
+      rgba(222, 0, 255, 1) 96%
+    );
+  }
+}
